@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   checkLocalStorage();
-  input.addEventListener("input_input", validateInput);
+  input.addEventListener("input", validateInput);
 
   function checkLocalStorage() {
     collected = Number(localStorage.getItem("collected"));
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   dataInputs.forEach((dataInput) => {
-    dataInput.addEventListener("input_input", function () {
+    dataInput.addEventListener("input", function () {
       if (this.value !== "") this.classList.add("active");
       else this.classList.remove("active");
     });
