@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   checkLocalStorage();
-  input.addEventListener("input", validateInput);
+  input.addEventListener("input_input", validateInput);
 
   function checkLocalStorage() {
     collected = Number(localStorage.getItem("collected"));
@@ -52,17 +52,17 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   dataInputs.forEach((dataInput) => {
-    dataInput.addEventListener("input", function () {
+    dataInput.addEventListener("input_input", function () {
       if (this.value !== "") this.classList.add("active");
       else this.classList.remove("active");
     });
     dataInput.addEventListener("focus", function () {
-      if (this.parentNode.classList.contains("subfield"))
+      if (this.parentNode.classList.contains("back"))
         this.parentNode.parentNode.style.boxShadow = "0 0 0 2px #000";
       else this.parentNode.style.boxShadow = "0 0 0 2px #000";
     });
     dataInput.addEventListener("blur", function () {
-      if (this.parentNode.classList.contains("subfield"))
+      if (this.parentNode.classList.contains("back"))
         this.parentNode.parentNode.style.boxShadow = "none";
       else this.parentNode.style.boxShadow = "none";
     });
